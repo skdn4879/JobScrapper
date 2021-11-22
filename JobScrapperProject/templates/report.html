@@ -1,0 +1,60 @@
+<!DOTYPE html>
+<html>
+  <head>
+    <title>Job Search</title>
+    <style>
+      section{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      /*
+      #jobkorea{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(7, 1fr);
+      }*/
+    </style>
+  </head>
+  <body>
+    <h1>Search Result</h1>
+    <h3>You are looking for {{searching}}, Sexy</h3>
+    <h3>We found {{resultsNumber}} for you</h3>
+    <a href="/export?word={{searching}}">Export CSV for {{searching}}</a>
+    <!-- {{변수명}} 으로 인자를 받아서 넣어줄 수 있다.-->
+    <section>
+      <h4>Title</h4>
+      <h4>Company</h4>
+      <h4>Location</h4>
+      <h4>Link</h4>
+      {% for job in jobs %}
+        <span>{{job.title}}</span>
+        <span>{{job.company}}</span>
+        <span>{{job.location}}</span>
+        <a href="{{job.link}}" target="_blank">Apply</a>
+      {% endfor %}
+      <!-- % % 는 Flask에서 python코드를 실행하기 위해 넣어준다. -->
+    </section>
+    <!--
+    <section id="jobkorea">
+      <h4>Title</h4>
+      <h4>Company</h4>
+      <h4>Exp</h4>
+      <h4>Edu</h4>
+      <h4>Location</h4>
+      <h4>Date</h4>
+      <h4>Link</h4>
+      {% for jobkorea_job in jobkorea_jobs %}
+        <span>{{jobkorea_job.title}}</span>
+        <span>{{jobkorea_job.company}}</span>
+        <span>{{jobkorea_job.exp}}</span>
+        <span>{{jobkorea_job.edu}}</span>
+        <span>{{jobkorea_job.location}}</span>
+        <span>{{jobkorea_job.date}}</span>
+        <a href="{{jobkorea_job.link}}" target="_blank">Apply</a>
+      {% endfor %}
+    </section>
+    -->
+    </form>
+  </body>
+</html>

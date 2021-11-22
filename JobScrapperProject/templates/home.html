@@ -1,0 +1,13 @@
+<!DOTYPE html>
+<html>
+  <head>
+    <title>Job Search</title>
+  </head>
+  <body>
+    <h1>Job Search</h1>
+    <form action = "/report" method = "get"> <!-- 검색버튼을 누르면 메인홈페이지+/report라는 url로 이동하고 넘겨지는 인자는 word로 받는다. https://nomadsuperscrappertest1.skdn4879.repl.co/report?word=react (react를 입력하고 검색을 눌렀을 때 이동함) 참고로 ?뒤는 url이 아니라 query argument(웹파라미터)다. /report까지가 url -->
+      <input placeholder="Search" required name = "word" />
+    <button>검색</button>
+    </form>
+  </body>
+</html>
